@@ -1,8 +1,11 @@
 name: device_id
-description: A new flutter plugin project.
+description: Plugin for retrieving uids.
 version: 0.1.0
-author: TheDOme6
+author: TheDOme6 <dominik2003schulze@gmail.com>
 homepage: https://notrait.com
+
+environment:
+  sdk: ">=1.19.0 <2.0.0"
 
 dependencies:
   flutter:
