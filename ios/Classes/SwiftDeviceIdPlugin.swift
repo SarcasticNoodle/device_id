@@ -9,6 +9,6 @@ public class SwiftDeviceIdPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    result(UIDevice.current.identifierForVendor!.uuidString)
+    result(UIDevice.current.identifierForVendor?.uuidString)
   }
 }
