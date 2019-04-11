@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:device_id/device_id.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(new MyApp());
 
@@ -21,13 +22,21 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> initDeviceId() async {
     String deviceid;
+    String imei;
+    String meid;
 
     deviceid = await DeviceId.getID;
+    try {
+      imei = await DeviceId.getIMEI;
+      meid = await DeviceId.getMEID;
+    } on PlatformException catch (e) {
+      print(e.message);
+    }
 
     if (!mounted) return;
 
     setState(() {
-      _deviceid = deviceid;
+      _deviceid = 'Your deviceid: $deviceid\nYour IMEI: $imei\nYour MEID: $meid';
     });
   }
 
@@ -39,7 +48,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Device Id example app'),
         ),
         body: new Center(
-          child: new Text('Your device id: $_deviceid'),
+          child: new Text('$_deviceid'),
         ),
       ),
     );

@@ -1,6 +1,6 @@
 name: device_id
 description: Plugin for retrieving uids.
-version: 0.1.3
+version: 0.2.0
 author: TheDOme6 <dominik2003schulze@gmail.com>
 homepage: https://github.com/TheDOme6/device_id
 

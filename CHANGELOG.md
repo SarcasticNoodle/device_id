@@ -1,3 +1,5 @@
+## 0.2.0
+Add androidx support, add IMEI, add MEID
 ## 0.1.3
 Upgrade to swift 4.1.x
 ## 0.1.2
