@@ -47,8 +47,9 @@ public class DeviceIdPlugin implements MethodCallHandler {
                     String imei = manager.getImei();
                     if (imei == null) {
                         result.error("1", "Error getting IMEI", "");
+                    } else {
+                        result.success(imei);
                     }
-                    result.success(imei);
                 } else {
                     result.error("1", "IMEI is not available for API versions lower than 26", "");
                 }
@@ -62,8 +63,9 @@ public class DeviceIdPlugin implements MethodCallHandler {
                     String imei = manager.getMeid();
                     if (imei == null) {
                         result.error("1", "Error getting MEID", "");
+                    } else {
+                        result.success(imei);
                     }
-                    result.success(imei);
                 } else {
                     result.error("1", "MEID is not available for API versions lower than 26", "");
                 }
